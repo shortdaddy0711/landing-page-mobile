@@ -8,27 +8,28 @@ import { Skull, Calendar, BookOpen, AlertTriangle } from 'lucide-react';
 
 const NotHalloweenLanding: React.FC = () => {
     return (
-        <div className='bg-white text-gray-500'>
-            <header className='bg-white text-orange-600 relative overflow-hidden'>
-
-                <div className='container mx-auto px-4 relative z-10'>
-                    <h1 className='text-4xl font-bold text-center'>{`Why 'NOT' Halloween`}</h1>
+        <div className='bg-white text-gray-900'>
+            <header className='bg-white text-orange-500 relative overflow-hidden'>
+                <div className='p-6 flex flex-col items-center'>
+                    <Image
+                        src='/halloween_top_image.png'
+                        alt='Decorative calendar image'
+                        width={100}
+                        height={100}
+                        className='w-80 opacity-80 rounded-3xl mb-4'
+                    />
+                    <div className='container mx-auto px-4'>
+                        <h1 className='text-4xl font-bold text-center'>{`Why 'NOT' Halloween`}</h1>
+                    </div>
                 </div>
-                {/* <Image
-                    src='/oct-31.webp'
-                    alt='Decorative calendar image'
-                    width={300}
-                    height={300}
-                    className='absolute right-0 top-0 -mt-16 -mr-16 opacity-10'
-                /> */}
             </header>
-            <main className='container mx-auto px-4 py-8'>
+            <main className='container mx-auto px-4 py-4'>
                 <section className='mb-12 relative'>
                     <h1 className='text-lg font-semibold mb-4 flex items-center'>
                         <Calendar className='mr-2' />
                         {`Origin of Halloween – "AllSaints Day" And "Samhain"`}
                     </h1>
-                    <Card className='backdrop-blur-sm bg-white/80'>
+                    <Card className='backdrop-blur-sm bg-orange-200'>
                         <CardContent className='p-6'>
                             <p className='mb-4'>
                                 Around AD 600, Pope Boniface IV dedicated the month of May to remembering the heroes of
@@ -56,11 +57,11 @@ const NotHalloweenLanding: React.FC = () => {
                         height={400}
                         className='absolute left-0 top-1/2 -translate-y-1/2 -ml-32 opacity-5'
                     />
-                    <h2 className='text-3xl font-semibold mb-4 flex items-center'>
+                    <h2 className='text-lg font-semibold mb-4 flex items-center'>
                         <Skull className='mr-2' />
                         Halloween in the United States Today
                     </h2>
-                    <Card className='backdrop-blur-sm bg-white/80'>
+                    <Card className='backdrop-blur-sm bg-orange-200'>
                         <CardContent className='p-6'>
                             <p className='mb-4'>
                                 When this celebration entered the United States in the 1800's, it started off as a
@@ -89,11 +90,11 @@ const NotHalloweenLanding: React.FC = () => {
                         height={200}
                         className='absolute right-0 top-1/2 -translate-y-1/2 -mr-16 opacity-10'
                     />
-                    <h2 className='text-3xl font-semibold mb-4 flex items-center'>
+                    <h2 className='text-lg font-semibold mb-4 flex items-center'>
                         <AlertTriangle className='mr-2' />
                         So why shouldn't we celebrate Halloween?
                     </h2>
-                    <Card className='backdrop-blur-sm bg-white/80'>
+                    <Card className='backdrop-blur-sm bg-orange-200'>
                         <CardContent className='p-6'>
                             <p className='mb-4'>
                                 When we partake in any activity related to Halloween costumes, jack-o-lanterns, and
@@ -116,7 +117,7 @@ const NotHalloweenLanding: React.FC = () => {
                         height={500}
                         className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5'
                     />
-                    <h2 className='text-3xl font-semibold mb-4 flex items-center'>
+                    <h2 className='text-lg font-semibold mb-4 flex items-center'>
                         <BookOpen className='mr-2' />
                         Biblical Warnings
                     </h2>
@@ -126,7 +127,7 @@ const NotHalloweenLanding: React.FC = () => {
                                 <CardTitle>1 Thessalonians 5:22</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p>Reject every kind of evil</p>
+                                <p><b>22</b> Reject every kind of evil</p>
                             </CardContent>
                         </Card>
 
@@ -136,19 +137,25 @@ const NotHalloweenLanding: React.FC = () => {
                             </CardHeader>
                             <CardContent>
                                 <p>
-                                    9 When you enter the land the LORD your God is giving you, do not learn to imitate
-                                    the detestable ways of the nations there.
+                                    <b>9</b> When you enter the land the LORD your God is giving you, do not learn to
+                                    imitate the detestable ways of the nations there.
                                 </p>
                                 <p>
-                                    10 Let no one be found among you who sacrifices their son or daughter in the fire,
-                                    who practices divination or sorcery, interprets omens, engages in witchcraft,
+                                    <b>10</b> Let no one be found among you who sacrifices their son or daughter in the
+                                    fire, who practices divination or sorcery, interprets omens, engages in witchcraft,
                                 </p>
-                                <p>11 or casts spells, or who is a medium or spiritist or who consults the dead.</p>
                                 <p>
-                                    12 Anyone who does these things is detestable to the LORD; because of these same
-                                    detestable practices the LORD your God will drive out those nations before you.
+                                    <b>11</b> or casts spells, or who is a medium or spiritist or who consults the
+                                    dead.
                                 </p>
-                                <p>13 You must be blameless before the LORD your God.</p>
+                                <p>
+                                    <b>12</b> Anyone who does these things is detestable to the LORD; because of these
+                                    same detestable practices the LORD your God will drive out those nations before
+                                    you.
+                                </p>
+                                <p>
+                                    <b>13</b> You must be blameless before the LORD your God.
+                                </p>
                             </CardContent>
                         </Card>
 
@@ -158,15 +165,16 @@ const NotHalloweenLanding: React.FC = () => {
                             </CardHeader>
                             <CardContent>
                                 <p>
-                                    19 The acts of the flesh are obvious: sexual immorality, impurity and debauchery;
+                                    <b>19</b> The acts of the flesh are obvious: sexual immorality, impurity and
+                                    debauchery;
                                 </p>
                                 <p>
-                                    20 idolatry and witchcraft; hatred, discord, jealousy, fits of rage, selfish
+                                    <b>20</b> idolatry and witchcraft; hatred, discord, jealousy, fits of rage, selfish
                                     ambition, dissensions, factions
                                 </p>
                                 <p>
-                                    21 and envy; drunkenness, orgies, and the like. I warn you, as I did before, that
-                                    those who live like this will not inherit the kingdom of God.
+                                    <b>21</b> and envy; drunkenness, orgies, and the like. I warn you, as I did before,
+                                    that those who live like this will not inherit the kingdom of God.
                                 </p>
                             </CardContent>
                         </Card>
@@ -177,9 +185,9 @@ const NotHalloweenLanding: React.FC = () => {
                             </CardHeader>
                             <CardContent>
                                 <p>
-                                    17 They sacrificed their sons and daughters in the fire. They practiced divination
-                                    and sought omens and sold themselves to do evil in the eyes of the LORD, arousing
-                                    his anger.
+                                    <b>17</b> They sacrificed their sons and daughters in the fire. They practiced
+                                    divination and sought omens and sold themselves to do evil in the eyes of the LORD,
+                                    arousing his anger.
                                 </p>
                             </CardContent>
                         </Card>
@@ -190,9 +198,9 @@ const NotHalloweenLanding: React.FC = () => {
                             </CardHeader>
                             <CardContent>
                                 <p>
-                                    6 He sacrificed his children in the fire in the Valley of Ben Hinnom, practiced
-                                    divination and witchcraft, sought omens, and consulted mediums and spiritists. He
-                                    did much evil in the eyes of the LORD, arousing his anger.
+                                    <b>6</b> He sacrificed his children in the fire in the Valley of Ben Hinnom,
+                                    practiced divination and witchcraft, sought omens, and consulted mediums and
+                                    spiritists. He did much evil in the eyes of the LORD, arousing his anger.
                                 </p>
                             </CardContent>
                         </Card>
@@ -201,15 +209,8 @@ const NotHalloweenLanding: React.FC = () => {
             </main>
 
             <footer className='bg-orange-600 text-white py-4 mt-8 relative overflow-hidden'>
-                <Image
-                    src='/placeholder.svg?height=100&width=1920'
-                    alt='Decorative footer background'
-                    width={1920}
-                    height={100}
-                    className='absolute inset-0 object-cover opacity-20'
-                />
                 <div className='container mx-auto px-4 text-center relative z-10'>
-                    <p>&copy; {new Date().getFullYear()} Not Halloween Campaign. All rights reserved.</p>
+                    <p>© 2023 Copyright TVNEXT.org. All Rights reserved.</p>
                 </div>
             </footer>
         </div>
