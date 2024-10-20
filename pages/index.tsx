@@ -79,8 +79,10 @@ export default function LightOverDarknessLanding() {
                 </div>
             </div>
             <main className='flex-grow px-4 py-8 relative z-10'>
-                <div className='bg-green-700/70 rounded-3xl p-6 mb-8 shadow-lg'>
-                    <h3 className='text-2xl font-semibold mb-4 text-stone-200'>Event Details</h3>
+                <div className='bg-green-700/70 rounded-3xl p-4 mb-8 shadow-lg'>
+                    <h3 className='text-2xl font-semibold mb-4 text-green-800/70 bg-green-100 rounded-3xl text-center p-1'>
+                        Event Details
+                    </h3>
                     <ul className='space-y-3 text-left mb-2'>
                         <li className='flex items-center'>
                             <Calendar className='w-7 h-7 mr-3 text-yellow-400' />
@@ -97,8 +99,10 @@ export default function LightOverDarknessLanding() {
                     </ul>
                 </div>
 
-                <div className='bg-yellow-700/70 rounded-3xl p-6 mb-8'>
-                    <h3 className='text-2xl font-semibold mb-4 text-stone-200'>Program Highlights</h3>
+                <div className='bg-yellow-700/70 rounded-3xl p-4 mb-8'>
+                    <h3 className='text-2xl font-semibold mb-4 text-yellow-800/70 bg-yellow-100 rounded-3xl text-center p-1'>
+                        Program Highlights
+                    </h3>
                     <ul className='space-y-2 text-left'>
                         <li className='flex items-start'>
                             <Utensils className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
@@ -132,8 +136,10 @@ export default function LightOverDarknessLanding() {
                     </div>
                 </div>
 
-                <div className='bg-orange-700/70 rounded-3xl p-6 mb-6'>
-                    <h3 className='text-2xl font-semibold mb-4 text-purple-900'>{`Register Now `}</h3>
+                <div className='bg-orange-700/70 rounded-3xl p-4 mb-6'>
+                    <h3 className='text-2xl font-semibold mb-4 text-orange-800/70 bg-orange-100 rounded-3xl text-center p-1'>
+                        Register
+                    </h3>
                     <h3 className='text-lg mb-4 text-white italic font-serif'>{`(Don't forget to capture your free raffle ticket after registration!)`}</h3>
                     <form onSubmit={handleSubmit} className='space-y-3'>
                         <div>
@@ -209,7 +215,8 @@ export default function LightOverDarknessLanding() {
                         </div>
                         <Button
                             type='submit'
-                            className='w-full bg-yellow-400 hover:bg-yellow-500 text-purple-900 font-bold py-3 rounded-full transition duration-300'
+                            className='w-full  bg-violet-200 hover:bg-violet-500 text-violet-700 hover:text-white font-bold py-6 rounded-xl transition duration-300 drop-shadow-2xl
+                            text-xl'
                         >
                             Register Now
                         </Button>
@@ -217,7 +224,7 @@ export default function LightOverDarknessLanding() {
                 </div>
                 <Link
                     href='/why-not-halloween'
-                    className='mt-1 block text-xl bg-orange-700 hover:bg-orange-900 text-yellow-200 font-bold py-2 rounded-md transition duration-300 text-center shadow-lg backdrop-blur-sm'
+                    className='mt-1 block text-xl bg-orange-700 hover:bg-orange-900 text-yellow-200 font-bold py-2 rounded-md transition duration-300 text-center shadow-xl'
                 >{`Why 'NOT' Halloween?`}</Link>
             </main>
 

@@ -29,8 +29,8 @@ export default function NotHalloweenLanding() {
                         <Calendar className='mr-2' />
                         {`Origin of Halloween – "AllSaints Day" And "Samhain"`}
                     </h1>
-                    <Card className='backdrop-blur-sm bg-orange-200'>
-                        <CardContent className='p-6'>
+                    <Card className='backdrop-blur-sm bg-orange-500/70'>
+                        <CardContent className='p-6 text-stone-700'>
                             <p className='mb-4'>
                                 Around AD 600, Pope Boniface IV dedicated the month of May to remembering the heroes of
                                 the Catholic Church and called it "All Saints Day".
@@ -54,8 +54,8 @@ export default function NotHalloweenLanding() {
                         <Skull className='mr-2' />
                         Halloween in the United States Today
                     </h2>
-                    <Card className='backdrop-blur-sm bg-orange-200'>
-                        <CardContent className='p-6'>
+                    <Card className='backdrop-blur-sm bg-orange-500/70'>
+                        <CardContent className='p-6 text-stone-700'>
                             <p className='mb-4'>
                                 When this celebration entered the United States in the 1800's, it started off as a
                                 seemingly innocent passing out of candy and chocolates to neighbors. But from the
@@ -80,8 +80,8 @@ export default function NotHalloweenLanding() {
                         <AlertTriangle className='mr-2' />
                         So why shouldn't we celebrate Halloween?
                     </h2>
-                    <Card className='backdrop-blur-sm bg-orange-200'>
-                        <CardContent className='p-6'>
+                    <Card className='backdrop-blur-sm bg-orange-500/70'>
+                        <CardContent className='p-6 text-stone-700'>
                             <p className='mb-4'>
                                 When we partake in any activity related to Halloween costumes, jack-o-lanterns, and
                                 decorations, we are opening up ourselves to the devil and giving him privilege over
@@ -101,9 +101,11 @@ export default function NotHalloweenLanding() {
                         Biblical Warnings
                     </h2>
                     <div className='space-y-5 relative z-10'>
-                        <Card className='backdrop-blur-sm bg-neutral-200  border-none shadow-md'>
+                        <Card className='backdrop-blur-sm bg-green-700/50  border-none shadow-md'>
                             <CardHeader>
-                                <CardTitle>1 Thessalonians 5:22</CardTitle>
+                                <CardTitle className='bg-green-200/50 p-2 text-center rounded-md text-green-900'>
+                                    1 Thessalonians 5:22
+                                </CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p>
@@ -112,9 +114,11 @@ export default function NotHalloweenLanding() {
                             </CardContent>
                         </Card>
 
-                        <Card className='backdrop-blur-sm bg-neutral-200  border-none shadow-md'>
+                        <Card className='backdrop-blur-sm bg-green-700/50  border-none shadow-md'>
                             <CardHeader>
-                                <CardTitle>Deuteronomy 18:9-13</CardTitle>
+                                <CardTitle className='bg-green-200/50 p-2 text-center rounded-md text-green-900'>
+                                    Deuteronomy 18:9-13
+                                </CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p>
@@ -140,9 +144,11 @@ export default function NotHalloweenLanding() {
                             </CardContent>
                         </Card>
 
-                        <Card className='backdrop-blur-sm bg-neutral-200  border-none shadow-md'>
+                        <Card className='backdrop-blur-sm bg-green-700/50  border-none shadow-md'>
                             <CardHeader>
-                                <CardTitle>Galatians 5:19-21</CardTitle>
+                                <CardTitle className='bg-green-200/50 p-2 text-center rounded-md text-green-900'>
+                                    Galatians 5:19-21
+                                </CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p>
@@ -160,9 +166,11 @@ export default function NotHalloweenLanding() {
                             </CardContent>
                         </Card>
 
-                        <Card className='backdrop-blur-sm bg-neutral-200  border-none shadow-md'>
+                        <Card className='backdrop-blur-sm bg-green-700/50  border-none shadow-md'>
                             <CardHeader>
-                                <CardTitle>2 Kings 17:17</CardTitle>
+                                <CardTitle className='bg-green-200/50 p-2 text-center rounded-md text-green-900'>
+                                    2 Kings 17:17
+                                </CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p>
@@ -173,9 +181,11 @@ export default function NotHalloweenLanding() {
                             </CardContent>
                         </Card>
 
-                        <Card className='backdrop-blur-sm bg-neutral-200  border-none shadow-md'>
+                        <Card className='backdrop-blur-sm bg-green-700/50  border-none shadow-md'>
                             <CardHeader>
-                                <CardTitle>2 Chronicles 33:6</CardTitle>
+                                <CardTitle className='bg-green-200/50 p-2 text-center rounded-md text-green-900'>
+                                    2 Chronicles 33:6
+                                </CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p>
