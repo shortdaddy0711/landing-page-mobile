@@ -8,23 +8,18 @@ import { Skull, Calendar, BookOpen, AlertTriangle } from 'lucide-react';
 
 export default function NotHalloweenLanding() {
     return (
-        <div className='bg-white text-gray-900' >
-            <header className='bg-white text-orange-500 relative overflow-hidden'>
+        <div className='bg-white text-gray-900'>
+            <header className='bg-white relative overflow-hidden'>
                 <div className='flex flex-col items-center'>
                     <Image
                         src='/halloween_top_image.png'
                         alt='Decorative calendar image'
                         width={500}
                         height={500}
-                        className=' opacity-80'
+                        className=' opacity-70'
                     />
-                    {/* <div className='container mx-auto px-4'>
-                        <h1 className='text-4xl font-bold text-center'>{`Why 'NOT' Halloween`}</h1>
-                    </div> */}
-                    <div className='absolute inset-0 flex flex-col items-center justify-center text-center p-4 bg-sky-900 bg-opacity-10'>
-                        <h1 className='text-4xl md:text-5xl font-bold mb-2'>{`Why 'NOT' Halloween`}</h1>
-                        {/* <h2 className='text-2xl md:text-3xl font-semibold mb-2'></h2>
-                        <p className='text-xl text-teal-200'>A night of fellowship, fun, and faith!</p> */}
+                    <div className='absolute inset-0 flex flex-col items-center justify-end text-center p-4 bg-sky-900 bg-opacity-10'>
+                        <h1 className='text-4xl md:text-5xl font-bold mb-2 drop-shadow-lg text-orange-50'>{`Why 'NOT' Halloween`}</h1>
                     </div>
                 </div>
             </header>
