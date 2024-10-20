@@ -19,161 +19,153 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function LightOverDarknessLanding() {
-    const [isRegistered, setIsRegistered] = useState(false);
-    const [giftLotNumber, setGiftLotNumber] = useState('');
+    const [raffleNumber, setRaffleNumber] = useState('');
+    const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Generate a random number for the gift lot
-        const randomNumber = Math.floor(Math.random() * 1000) + 1;
-        setGiftLotNumber(randomNumber.toString().padStart(3, '0'));
-        setIsRegistered(true);
+        const randomNumber = Math.floor(Math.random() * 10000) + 1;
+        const raffle = randomNumber.toString().padStart(3, '0');
+
+        const googleSheetUrl =
+            'https://script.google.com/macros/s/AKfycbzIeRixzrHMD3Q1uyvIIFFTuGUHBzyh0eP1WTwmS0Z7ULHGU7uRMmUxjehgxWPL4oSJDg/exec';
+
+        const formData = new FormData(e.currentTarget);
+        formData.append('raffleNumber', raffle);
+        const currentDate = new Date().toISOString().split('T')[0];
+        formData.append('date', currentDate);
+
+        const name = formData.get('name').toString();
+
+        fetch(googleSheetUrl, {
+            method: 'POST',
+            body: formData,
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success');
+                setRaffleNumber(raffle);
+                router.push({
+                    pathname: '/raffle-ticket',
+                    query: {
+                        raffleNumber: raffle,
+                        name,
+                    },
+                });
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     };
 
-    if (isRegistered) {
-        return (
-            <div className='flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-purple-900 to-black text-white p-6 text-center'>
-                <h2 className='text-3xl font-bold mb-4'>Thank You for Registering!</h2>
-                <p className='text-xl mb-8'>Your gift lot number is:</p>
-                <div className='bg-yellow-400 text-purple-900 text-4xl font-bold py-4 px-8 rounded-lg mb-8'>
-                    {giftLotNumber}
-                </div>
-                <p className='mb-4'>Please keep this number for the gift drawing at the event.</p>
-                <Button onClick={() => setIsRegistered(false)} className='bg-purple-600 hover:bg-purple-700'>
-                    Back to Event Page
-                </Button>
-            </div>
-        );
-    }
-
     return (
-        <div className='flex flex-col min-h-screen bg-white text-white relative'>
-            <div className='relative h-[40vh] md:h-[60vh] w-full'>
-                {/* <Image
-                    src='/worship.jpg'
-                    alt='Worship night'
-                    layout='fill'
-                    // objectFit='cover'
-                    className='brightness-100'
-                /> */}
-                <Image
-                    src='/top.png'
-                    alt='Decorative header background'
-                    layout='fill'
-                    className='w-full object-cover max-h-96'
-                />
-                {/* <div className='absolute inset-0 flex flex-col items-center justify-center text-center p-4 bg-sky-900 bg-opacity-30'>
-                    <h1 className='text-4xl md:text-5xl font-bold mb-2'>Light Over Darkness</h1>
-                    <h2 className='text-2xl md:text-3xl font-semibold mb-2'></h2>
-                    <p className='text-xl text-teal-200'>A night of fellowship, fun, and faith!</p>
-                </div> */}
+        <div className='bg-hero bg-contain flex flex-col min-h-screen bg-white relative'>
+            <div className='w-full mb-8'>
+                <div className='pt-20 flex flex-col items-center justify-center text-center p-4'>
+                    <h4 className='mt-6 text-2xl text-orange-800 antialiased  md:text-5xl font-sans mb-2'>
+                        We invite you to
+                    </h4>
+                    <h1 className='text-5xl text-orange-800 antialiased italic  md:text-5xl font-serif mb-2'>
+                        Fall-O-Ween
+                    </h1>
+                    <p className='mt-6 text-2xl text-orange-600 font-light'>A night of </p>
+                    <p className='mt-1 mb-6 text-2xl text-orange-600 font-light'>fellowship, fun, and faith!</p>
+                    <div className='bg-orange-700 px-8 py-2 text-2xl text-white font-serif rounded-3xl'>
+                        OCTOBER 31
+                    </div>
+                </div>
             </div>
-
-            <main className='flex-grow px-4 pb-8 relative z-10'>
-                <Link
-                    href='/why-not-halloween'
-                    className='mb-4 block text-xl bg-orange-500 hover:bg-orange-700 text-yellow-200 font-bold py-2 rounded-md transition duration-300 text-center shadow-lg backdrop-blur-sm'
-                >{`Why 'NOT' Halloween?`}</Link>
-                <div className='bg-gray-500 backdrop-blur-lg p-6 mb-8 shadow-lg'>
-                    <h3 className='text-2xl font-semibold mb-4'>Event Details</h3>
-                    <ul className='space-y-3 text-left mb-6'>
+            <main className='flex-grow px-4 py-8 relative z-10'>
+                <div className='bg-green-700/70 rounded-3xl p-6 mb-8 shadow-lg'>
+                    <h3 className='text-2xl font-semibold mb-4 text-stone-200'>Event Details</h3>
+                    <ul className='space-y-3 text-left mb-2'>
                         <li className='flex items-center'>
                             <Calendar className='w-7 h-7 mr-3 text-yellow-400' />
-                            <span className='text-xl'>Thursday, October 31, 2024</span>
+                            <span className='text-xl text-white'>Thursday, October 31, 2024</span>
                         </li>
                         <li className='flex items-center'>
                             <Clock className='w-7 h-7 mr-3 text-yellow-400' />
-                            <span className='text-xl'>6:00 PM - 9:00 PM</span>
+                            <span className='text-xl text-white'>6:00 PM - 9:30 PM</span>
                         </li>
                         <li className='flex items-center'>
                             <MapPin className='w-7 h-7 mr-3 text-yellow-400' />
-                            <span className='text-xl'>
-                                Maranatha Vision Church Youth Ministry, 1239 N.Livermore Ave. Livermore, CA 94551
-                            </span>
+                            <span className='text-xl text-white'>MVCYM: 1239 N.Livermore Ave.</span>
                         </li>
                     </ul>
                 </div>
 
-                <div className='bg-gray-600 backdrop-blur-sm p-6 mb-8'>
-                    <h3 className='text-2xl font-semibold mb-4'>Program Highlights</h3>
+                <div className='bg-yellow-700/70 rounded-3xl p-6 mb-8'>
+                    <h3 className='text-2xl font-semibold mb-4 text-stone-200'>Program Highlights</h3>
                     <ul className='space-y-2 text-left'>
                         <li className='flex items-start'>
                             <Utensils className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl'>Delicious K-food dinner</span>
+                            <span className='text-xl text-white'>Delicious K-food dinner</span>
                         </li>
                         <li className='flex items-start'>
                             <Handshake className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl'>Fellowship activities to make new friends</span>
+                            <span className='text-xl text-white'>Fellowship activities to make new friends</span>
                         </li>
                         <li className='flex items-start'>
                             <MessageCircle className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl'>Inspiring testimonies from peers</span>
+                            <span className='text-xl text-white'>Inspiring testimonies</span>
                         </li>
                         <li className='flex items-start'>
                             <Drama className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl'>Breathtaking Skits for revival</span>
+                            <span className='text-xl text-white'>Breathtaking Skits for revival</span>
                         </li>
                         <li className='flex items-start'>
                             <Music className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl'>Uplifting worship session</span>
+                            <span className='text-xl text-white'>Uplifting worship session</span>
                         </li>
                         <li className='flex items-start'>
                             <PartyPopper className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl'>{`Suprising Raffle`}</span>
+                            <span className='text-xl text-white'>{`Suprising Raffle`}</span>
                         </li>
                     </ul>
+                    <div className='mt-4'>
+                        <Image src='/friends.png' alt='friends' width={400} height={200} className='grayscale' />
+                        <Image src='/prayer.png' alt='prayer' width={400} height={200} className='grayscale mt-2' />
+                        <Image src='/praise.png' alt='praise' width={400} height={200} className='grayscale mt-2' />
+                    </div>
                 </div>
 
-                <div className='bg-gray-700 backdrop-blur-sm p-6 mb-8'>
-                    <h3 className='text-2xl font-semibold mb-4'>{`Register Now `}</h3>
-                    <h3 className='text-xl mb-4'>{`(Don't forget to capture your free raffle ticket after registration!)`}</h3>
-                    <form onSubmit={handleSubmit} className='space-y-4'>
+                <div className='bg-orange-700/70 rounded-3xl p-6 mb-6'>
+                    <h3 className='text-2xl font-semibold mb-4 text-purple-900'>{`Register Now `}</h3>
+                    <h3 className='text-lg mb-4 text-white italic font-serif'>{`(Don't forget to capture your free raffle ticket after registration!)`}</h3>
+                    <form onSubmit={handleSubmit} className='space-y-3'>
                         <div>
                             <Label htmlFor='name' className='text-white'>
-                                Name
+                                Name*
                             </Label>
-                            <Input
-                                id='name'
-                                placeholder='Your Name'
-                                required
-                                className='bg-white'
-                            />
+                            <Input name='name' id='name' placeholder='Your Name' required className='bg-white' />
                         </div>
                         <div>
-                            <Label htmlFor='email' className='text-white'>
-                                Email
+                            <Label htmlFor='friend' className='text-white'>
+                                Friend name*
                             </Label>
                             <Input
-                                id='email'
-                                type='email'
-                                placeholder='your@email.com'
-                                required
-                                className='bg-white'
-                            />
-                        </div>
-                        <div>
-                            <Label htmlFor='phone' className='text-white'>
-                                Phone
-                            </Label>
-                            <Input
-                                id='phone'
-                                type='tel'
-                                placeholder='(123) 456-7890'
+                                name='friend'
+                                id='friend'
+                                type='text'
+                                placeholder='John Lee'
                                 required
                                 className='bg-white'
                             />
                         </div>
                         <div>
                             <Label htmlFor='school' className='text-white'>
-                                School
+                                School*
                             </Label>
                             <Input
                                 id='school'
                                 type='text'
                                 placeholder='Livermore High School'
+                                required
                                 className='bg-white'
+                                name='school'
                             />
                         </div>
                         <div>
@@ -182,11 +174,37 @@ export default function LightOverDarknessLanding() {
                             </Label>
                             <Input
                                 id='grade'
-                                type='number'
+                                type=''
                                 placeholder='9'
                                 min='6'
                                 max='12'
                                 className='bg-white'
+                                name='grade'
+                            />
+                        </div>
+                        <div>
+                            <Label htmlFor='email' className='text-white'>
+                                Parents(Guardian) Email*
+                            </Label>
+                            <Input
+                                id='email'
+                                type='email'
+                                placeholder='your@email.com'
+                                required
+                                className='bg-white'
+                                name='email'
+                            />
+                        </div>
+                        <div>
+                            <Label htmlFor='allergy' className='text-white'>
+                                Please specify if you are allegic to
+                            </Label>
+                            <Input
+                                id='allergy'
+                                type='text'
+                                placeholder='e.g., peanut'
+                                className='bg-white'
+                                name='allergy'
                             />
                         </div>
                         <Button
@@ -197,16 +215,20 @@ export default function LightOverDarknessLanding() {
                         </Button>
                     </form>
                 </div>
+                <Link
+                    href='/why-not-halloween'
+                    className='mt-1 block text-xl bg-orange-700 hover:bg-orange-900 text-yellow-200 font-bold py-2 rounded-md transition duration-300 text-center shadow-lg backdrop-blur-sm'
+                >{`Why 'NOT' Halloween?`}</Link>
             </main>
 
-            <footer className='p-4 relative z-10'>
+            <footer className='pb-8 relative z-10'>
                 <div>
                     <Image src='/logo.png' alt='Logo' width={128} height={128} className='mx-auto mb-4' />
                 </div>
                 <ul className='space-y-2 flex flex-col items-center justify-center text-slate-900'>
                     <li className='flex items-center'>
                         <Phone className='w-5 h-5 mr-2 text-yellow-400' />
-                        <span>(925) 555-1234</span>
+                        <span>(925) 413-9399</span>
                     </li>
                     <li className='flex items-center'>
                         <Mail className='w-5 h-5 mr-2 text-yellow-400' />
