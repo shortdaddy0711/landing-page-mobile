@@ -69,10 +69,10 @@ export default function LightOverDarknessLanding() {
                         We invite you to
                     </h4>
                     <h1 className='text-5xl text-orange-800 antialiased italic  md:text-5xl font-serif mb-2'>
-                        Fall-O-Ween
+                    χάρις night
                     </h1>
                     <p className='mt-6 text-2xl text-orange-600 font-light'>A night of </p>
-                    <p className='mt-1 mb-6 text-2xl text-orange-600 font-light'>fellowship, fun, and faith!</p>
+                    <p className='mt-1 mb-8 text-2xl text-orange-600 font-light'>Fellowship, Fun, and Faith!</p>
                     <div className='bg-orange-700 px-8 py-2 text-2xl text-white font-serif rounded-3xl'>
                         OCTOBER 31
                     </div>
@@ -126,7 +126,7 @@ export default function LightOverDarknessLanding() {
                         </li>
                         <li className='flex items-start'>
                             <PartyPopper className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl text-white'>{`Suprising Raffle`}</span>
+                            <span className='text-xl text-white'>{`Surprising Raffle`}</span>
                         </li>
                     </ul>
                     <div className='mt-4'>
