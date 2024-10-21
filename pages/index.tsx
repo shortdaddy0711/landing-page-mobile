@@ -138,7 +138,7 @@ export default function LightOverDarknessLanding() {
 
                 <div className='bg-orange-700/70 rounded-3xl p-4 mb-6'>
                     <h3 className='text-2xl font-semibold mb-4 text-orange-800/70 bg-orange-100 rounded-3xl text-center p-1'>
-                        Register
+                        Registration
                     </h3>
                     <h3 className='text-lg mb-4 text-white italic font-serif'>{`(Don't forget to capture your free raffle ticket after registration!)`}</h3>
                     <form onSubmit={handleSubmit} className='space-y-3'>
@@ -150,13 +150,13 @@ export default function LightOverDarknessLanding() {
                         </div>
                         <div>
                             <Label htmlFor='friend' className='text-white'>
-                                Friend name*
+                                Friend who invite you*
                             </Label>
                             <Input
                                 name='friend'
                                 id='friend'
                                 type='text'
-                                placeholder='John Lee'
+                                placeholder='e.g., John Lee'
                                 required
                                 className='bg-white'
                             />
@@ -168,7 +168,7 @@ export default function LightOverDarknessLanding() {
                             <Input
                                 id='school'
                                 type='text'
-                                placeholder='Livermore High School'
+                                placeholder='e.g., Livermore High School'
                                 required
                                 className='bg-white'
                                 name='school'
@@ -180,8 +180,8 @@ export default function LightOverDarknessLanding() {
                             </Label>
                             <Input
                                 id='grade'
-                                type=''
-                                placeholder='9'
+                                type='number'
+                                placeholder='6'
                                 min='6'
                                 max='12'
                                 className='bg-white'
