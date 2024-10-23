@@ -20,6 +20,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { InstagramLogoIcon } from '@radix-ui/react-icons';
 
 export default function LightOverDarknessLanding() {
     const [raffleNumber, setRaffleNumber] = useState('');
@@ -239,7 +240,11 @@ export default function LightOverDarknessLanding() {
                     </li>
                     <li className='flex items-center'>
                         <Mail className='w-5 h-5 mr-2 text-yellow-400' />
-                        <span>hello@mvcym.org</span>
+                        <Link href={'mailto:hello@mvcym.org'}>hello@mvcym.org</Link>
+                    </li>
+                    <li className='flex items-center'>
+                        <InstagramLogoIcon className='w-5 h-5 mr-2 text-yellow-400' />
+                        <Link href={'https://www.instagram.com/mvcym_/reels'}>mvcym_</Link>
                     </li>
                     <li className='flex items-center'>
                         <MapPin className='w-5 h-5 mr-2 text-yellow-400' />

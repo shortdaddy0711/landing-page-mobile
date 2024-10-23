@@ -9,7 +9,7 @@ export default function RaffleTicket() {
     console.log(name, raffle);
 
     return (
-        <div className='flex flex-col items-center justify-start min-h-screen text-slate-900  text-center bg-violet-700 p-2'>
+        <div className='w-full flex flex-col items-center justify-start min-h-screen text-slate-900  text-center bg-violet-700 p-2'>
             <h2 className='text-3xl font-bold m-4 text-yellow-400'>Welcome to MVCYM!</h2>
             <Image src='/raffle.png' alt='raffle-ticket' width={200} height={50} />
             <div className='my-6 flex flex-col px-6 py-2 bg font-mono text-yellow-400 bg-violet-400/50 drop-shadow-2xl rounded-2xl min-w-80'>
