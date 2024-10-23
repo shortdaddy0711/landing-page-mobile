@@ -69,7 +69,7 @@ export default function LightOverDarknessLanding() {
                         We invite you to
                     </h4>
                     <h1 className='text-5xl text-orange-800 antialiased italic  md:text-5xl font-serif mb-2'>
-                    χάρις night
+                        χάρις night
                     </h1>
                     <p className='mt-6 text-2xl text-orange-600 font-light'>A night of </p>
                     <p className='mt-1 mb-8 text-2xl text-orange-600 font-light'>Fellowship, Fun, and Faith!</p>
@@ -141,7 +141,7 @@ export default function LightOverDarknessLanding() {
                         Registration
                     </h3>
                     <h3 className='text-lg mb-4 text-white italic font-serif'>{`(Don't forget to capture your free raffle ticket after registration!)`}</h3>
-                    <form onSubmit={handleSubmit} className='space-y-3'>
+                    <form onSubmit={handleSubmit} className='space-y-4'>
                         <div>
                             <Label htmlFor='name' className='text-white'>
                                 Name*
@@ -202,21 +202,21 @@ export default function LightOverDarknessLanding() {
                             />
                         </div>
                         <div>
-                            <Label htmlFor='allergy' className='text-white'>
-                                Please specify if you are allegic to
+                            <Label htmlFor='dietary' className='text-white'>
+                                Please specify your dietary restrictions
                             </Label>
                             <Input
-                                id='allergy'
+                                id='dietary'
                                 type='text'
-                                placeholder='e.g., peanut'
+                                placeholder='e.g., Allergies, Intolerances, etc.'
                                 className='bg-white'
-                                name='allergy'
+                                name='dietary'
                             />
                         </div>
                         <Button
                             type='submit'
-                            className='w-full  bg-violet-200 hover:bg-violet-500 text-violet-700 hover:text-white font-bold py-6 rounded-xl transition duration-300 drop-shadow-2xl
-                            text-xl'
+                            className='w-full bg-violet-200 hover:bg-violet-500 text-violet-700 hover:text-white font-bold py-5 rounded-xl transition duration-300 drop-shadow-2xl
+                            text-lg'
                         >
                             Register Now
                         </Button>
