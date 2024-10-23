@@ -239,7 +239,7 @@ export default function LightOverDarknessLanding() {
                     </li>
                     <li className='flex items-center'>
                         <Mail className='w-5 h-5 mr-2 text-yellow-400' />
-                        <span>admin@mvcym.org</span>
+                        <span>hello@mvcym.org</span>
                     </li>
                     <li className='flex items-center'>
                         <MapPin className='w-5 h-5 mr-2 text-yellow-400' />
