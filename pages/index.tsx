@@ -38,7 +38,9 @@ export default function LightOverDarknessLanding() {
         const raffle = randomNumber.toString().padStart(3, '0');
 
         const googleSheetUrl =
-            'https://script.google.com/macros/s/AKfycbzIeRixzrHMD3Q1uyvIIFFTuGUHBzyh0eP1WTwmS0Z7ULHGU7uRMmUxjehgxWPL4oSJDg/exec';
+            'https://script.google.com/macros/s/AKfycbwMCY40DqnVFQ_y49xefnLgX0eF0obx_KdsornUVmsgJjuiPTpBU4UXOoP1U0jjtE1CRw/exec';
+
+            
 
         const formData = new FormData(e.currentTarget);
         formData.append('raffleNumber', raffle);
