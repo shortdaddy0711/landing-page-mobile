@@ -163,6 +163,9 @@ export default function LightOverDarknessLanding() {
                     <h3 className='text-2xl font-bold mb-6 text-center drop-shadow-lg' style={{color: '#36753B'}}>
                         Registration
                     </h3>
+                    <h3 className='text-lg mb-6 font-semibold text-center rounded-xl p-4 backdrop-blur-sm' style={{color: '#36753B', backgroundColor: '#FBE55C'}}>
+                        Don&apos;t forget to capture your free raffle ticket after registration!
+                    </h3>
                     <form onSubmit={handleSubmit} className='space-y-5'>
                         <div>
                             <Label htmlFor='name' className='font-semibold text-lg drop-shadow-lg' style={{color: '#36753B'}}>
