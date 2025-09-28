@@ -76,107 +76,117 @@ export default function LightOverDarknessLanding() {
     };
 
     return (
-        <div className='bg-hero bg-contain flex flex-col min-h-screen bg-white relative'>
-            <div className='w-full mb-8'>
+        <div className='flex flex-col min-h-screen relative overflow-hidden' style={{background: 'linear-gradient(135deg, #36753B 0%, #5BBFEC 50%, #B2DA61 100%)'}}>
+            {/* Colorful background elements */}
+            <div className='absolute inset-0 overflow-hidden'>
+                <div className='absolute -top-40 -right-40 w-80 h-80 rounded-full filter blur-3xl' style={{backgroundColor: '#FBE55C', opacity: 0.3}}></div>
+                <div className='absolute -bottom-40 -left-40 w-80 h-80 rounded-full filter blur-3xl' style={{backgroundColor: '#FBF4E1', opacity: 0.4}}></div>
+                <div className='absolute top-40 left-40 w-80 h-80 rounded-full filter blur-3xl' style={{backgroundColor: '#B2DA61', opacity: 0.3}}></div>
+            </div>
+            
+            <div className='w-full mb-8 relative z-10'>
                 <div className='pt-20 flex flex-col items-center justify-center text-center p-4'>
-                    <h4 className='mt-6 text-2xl text-orange-800 antialiased  md:text-5xl font-sans mb-2'>
+                    <h4 className='mt-6 text-3xl text-white antialiased md:text-5xl font-bold mb-2 drop-shadow-lg'>
                         We invite you to
                     </h4>
-                    <h1 className='text-5xl text-orange-800 antialiased italic  md:text-5xl font-serif mb-2'>
+                    <h1 className='text-6xl text-white antialiased font-black md:text-7xl mb-2 drop-shadow-2xl transform hover:scale-105 transition-all duration-1000 animate-bounce' style={{background: 'linear-gradient(45deg, #FBE55C, #FBF4E1, #B2DA61)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>
                         χάρις night
                     </h1>
-                    <p className='mt-6 text-2xl text-orange-600 font-light'>A night of </p>
-                    <p className='mt-1 mb-8 text-2xl text-orange-600 font-light'>Fellowship, Fun, and Faith!</p>
-                    <div className='bg-orange-700 px-8 py-2 text-2xl text-white font-serif rounded-3xl'>
-                        OCTOBER 31
+                    <p className='mt-6 text-2xl text-white font-bold drop-shadow-lg'>A night of</p>
+                    <p className='mt-1 mb-8 text-2xl text-white font-bold drop-shadow-lg'>Fellowship, Fun, and Faith</p>
+                    <div className='px-8 py-3 text-2xl font-bold rounded-lg shadow-2xl transform hover:scale-110 transition-all duration-300 border-2 border-white/50' style={{background: 'linear-gradient(45deg, #FBE55C, #FBF4E1)', color: '#36753B'}}>
+                        OCTOBER 31 FRIDAY
                     </div>
                 </div>
             </div>
             <main className='flex-grow px-4 py-8 relative z-10'>
-                <div className='bg-green-700/70 rounded-3xl p-4 mb-8 shadow-lg'>
-                    <h3 className='text-2xl font-semibold mb-4 text-green-800/70 bg-green-100 rounded-3xl text-center p-1'>
+                <div className='backdrop-blur-sm rounded-2xl p-6 mb-8 shadow-xl border-2' style={{backgroundColor: '#FBF4E1', borderColor: '#FBE55C'}}>
+                    <h3 className='text-2xl font-bold mb-6 text-center drop-shadow-lg' style={{color: '#36753B'}}>
                         Event Details
                     </h3>
-                    <ul className='space-y-3 text-left mb-2'>
-                        <li className='flex items-center'>
-                            <Calendar className='w-7 h-7 mr-3 text-yellow-400' />
-                            <span className='text-xl text-white'>Thursday, October 31, 2024</span>
+                    <ul className='space-y-4 text-left mb-2'>
+                        <li className='flex items-center rounded-xl p-4 backdrop-blur-sm border' style={{backgroundColor: '#FBE55C', borderColor: '#36753B'}}>
+                            <Calendar className='w-6 h-6 mr-4 animate-bounce' style={{color: '#36753B'}} />
+                            <span className='text-lg font-semibold' style={{color: '#36753B'}}>Friday, October 31, 2025</span>
                         </li>
-                        <li className='flex items-center'>
-                            <Clock className='w-7 h-7 mr-3 text-yellow-400' />
-                            <span className='text-xl text-white'>6:00 PM - 9:30 PM</span>
+                        <li className='flex items-center rounded-xl p-4 backdrop-blur-sm border' style={{backgroundColor: '#B2DA61', borderColor: '#36753B'}}>
+                            <Clock className='w-6 h-6 mr-4 animate-bounce delay-100' style={{color: '#36753B'}} />
+                            <span className='text-lg font-semibold' style={{color: '#36753B'}}>6:00 PM - 9:30 PM</span>
                         </li>
-                        <li className='flex items-center'>
-                            <MapPin className='w-7 h-7 mr-3 text-yellow-400' />
-                            <span className='text-xl text-white'>MVCYM: 1239 N.Livermore Ave.</span>
+                        <li className='flex items-center rounded-xl p-4 backdrop-blur-sm border' style={{backgroundColor: '#5BBFEC', borderColor: '#36753B'}}>
+                            <MapPin className='w-6 h-6 mr-4 animate-bounce delay-200' style={{color: '#36753B'}} />
+                            <span className='text-lg font-semibold' style={{color: '#36753B'}}>MVCYM: 1239 N.Livermore Ave.</span>
                         </li>
                     </ul>
                 </div>
 
-                <div className='bg-yellow-700/70 rounded-3xl p-4 mb-8'>
-                    <h3 className='text-2xl font-semibold mb-4 text-yellow-800/70 bg-yellow-100 rounded-3xl text-center p-1'>
-                        Program Highlights
+                <div className='backdrop-blur-sm rounded-2xl p-6 mb-8 shadow-xl border-2' style={{backgroundColor: '#FBF4E1', borderColor: '#FBE55C'}}>
+                    <h3 className='text-2xl font-bold mb-6 text-center drop-shadow-lg' style={{color: '#36753B'}}>
+                        What to Expect
                     </h3>
-                    <ul className='space-y-2 text-left'>
-                        <li className='flex items-start'>
-                            <Utensils className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl text-white'>Delicious K-food dinner</span>
+                    <ul className='space-y-4 text-left'>
+                        <li className='flex items-start rounded-xl p-4 backdrop-blur-sm border' style={{backgroundColor: '#FBE55C', borderColor: '#36753B'}}>
+                            <Utensils className='w-6 h-6 mr-4 mt-1 animate-bounce' style={{color: '#36753B'}} />
+                            <span className='text-lg font-semibold' style={{color: '#36753B'}}>Delicious Korean food dinner</span>
                         </li>
-                        <li className='flex items-start'>
-                            <Handshake className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl text-white'>Fellowship activities to make new friends</span>
+                        <li className='flex items-start rounded-xl p-4 backdrop-blur-sm border' style={{backgroundColor: '#B2DA61', borderColor: '#36753B'}}>
+                            <Handshake className='w-6 h-6 mr-4 mt-1 animate-bounce delay-100' style={{color: '#36753B'}} />
+                            <span className='text-lg font-semibold' style={{color: '#36753B'}}>Fellowship activities to connect with others</span>
                         </li>
-                        <li className='flex items-start'>
-                            <MessageCircle className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl text-white'>Inspiring testimonies</span>
+                        <li className='flex items-start rounded-xl p-4 backdrop-blur-sm border' style={{backgroundColor: '#5BBFEC', borderColor: '#36753B'}}>
+                            <MessageCircle className='w-6 h-6 mr-4 mt-1 animate-bounce delay-200' style={{color: '#36753B'}} />
+                            <span className='text-lg font-semibold' style={{color: '#36753B'}}>Inspiring testimonies and stories</span>
                         </li>
-                        <li className='flex items-start'>
-                            <Drama className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl text-white'>Breathtaking Skits for revival</span>
+                        <li className='flex items-start rounded-xl p-4 backdrop-blur-sm border' style={{backgroundColor: '#FBE55C', borderColor: '#36753B'}}>
+                            <Drama className='w-6 h-6 mr-4 mt-1 animate-bounce delay-300' style={{color: '#36753B'}} />
+                            <span className='text-lg font-semibold' style={{color: '#36753B'}}>Powerful skits and performances</span>
                         </li>
-                        <li className='flex items-start'>
-                            <Music className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl text-white'>Uplifting worship session</span>
+                        <li className='flex items-start rounded-xl p-4 backdrop-blur-sm border' style={{backgroundColor: '#B2DA61', borderColor: '#36753B'}}>
+                            <Music className='w-6 h-6 mr-4 mt-1 animate-bounce delay-400' style={{color: '#36753B'}} />
+                            <span className='text-lg font-semibold' style={{color: '#36753B'}}>Uplifting worship and music</span>
                         </li>
-                        <li className='flex items-start'>
-                            <PartyPopper className='w-7 h-7 mr-3 text-yellow-400 mt-1' />
-                            <span className='text-xl text-white'>{`Surprising Raffle`}</span>
+                        <li className='flex items-start rounded-xl p-4 backdrop-blur-sm border' style={{backgroundColor: '#5BBFEC', borderColor: '#36753B'}}>
+                            <PartyPopper className='w-6 h-6 mr-4 mt-1 animate-bounce delay-500' style={{color: '#36753B'}} />
+                            <span className='text-lg font-semibold' style={{color: '#36753B'}}>Raffle with exciting prizes</span>
                         </li>
                     </ul>
-                    <div className='mt-4'>
-                        <Image src='/friends.png' alt='friends' width={400} height={200} className='grayscale' />
-                        <Image src='/prayer.png' alt='prayer' width={400} height={200} className='grayscale mt-2' />
-                        <Image src='/praise.png' alt='praise' width={400} height={200} className='grayscale mt-2' />
+                    <div className='mt-6 grid grid-cols-1 gap-4'>
+                        <Image src='/fellowship_1.png' alt='fellowship_1' width={400} height={200} className='rounded-xl shadow-lg hover:scale-105 transition-transform duration-300' />
+                        <Image src='/fellowship_2.png' alt='fellowship_2' width={400} height={200} className='rounded-xl shadow-lg hover:scale-105 transition-transform duration-300' />
+                        <Image src='/praise.png' alt='praise' width={400} height={200} className='rounded-xl shadow-lg hover:scale-105 transition-transform duration-300' />
                     </div>
                 </div>
 
-                <div className='bg-orange-700/70 rounded-3xl p-4 mb-6'>
-                    <h3 className='text-2xl font-semibold mb-4 text-orange-800/70 bg-orange-100 rounded-3xl text-center p-1'>
+                <div className='backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-xl border-2' style={{backgroundColor: '#FBF4E1', borderColor: '#FBE55C'}}>
+                    <h3 className='text-2xl font-bold mb-6 text-center drop-shadow-lg' style={{color: '#36753B'}}>
                         Registration
                     </h3>
-                    <h3 className='text-lg mb-4 text-white italic font-serif'>{`(Don't forget to capture your free raffle ticket after registration!)`}</h3>
-                    <form onSubmit={handleSubmit} className='space-y-4'>
+                    <h3 className='text-lg mb-6 font-semibold text-center rounded-xl p-4 backdrop-blur-sm' style={{color: '#36753B', backgroundColor: '#FBE55C'}}>
+                        Don&apos;t forget to capture your free raffle ticket after registration!
+                    </h3>
+                    <form onSubmit={handleSubmit} className='space-y-5'>
                         <div>
-                            <Label htmlFor='name' className='text-white'>
+                            <Label htmlFor='name' className='font-semibold text-lg drop-shadow-lg' style={{color: '#36753B'}}>
                                 Name*
                             </Label>
-                            <Input name='name' id='name' placeholder='Your Name' required className='bg-white' />
+                            <Input name='name' id='name' placeholder='Your Name' required className='bg-white border-2 rounded-lg p-3 text-lg placeholder-gray-500' style={{borderColor: '#36753B', color: '#36753B'}} />
                         </div>
-                        <div>
+                        <div className='rounded-lg p-4 backdrop-blur-sm' style={{backgroundColor: '#B2DA61'}}>
                             <Checkbox
                                 id='attend'
                                 name='attend'
                                 checked={attend}
                                 onCheckedChange={handleAttend}
-                                className='h-5 w-5 border-slate-50'
+                                className='h-5 w-5'
+                                style={{borderColor: '#36753B'}}
                             />
-                            <label htmlFor='attend' className='text-sm font-medium text-white ml-2'>
-                                {`I'm attending MVCYM regularly.`}
+                            <label htmlFor='attend' className='text-lg font-semibold ml-3 drop-shadow-lg' style={{color: '#36753B'}}>
+                                I&apos;m already part of MVCYM
                             </label>
                         </div>
                         <div>
-                            <Label htmlFor='friend' className='text-white'>
-                                Friend who invite you*
+                            <Label htmlFor='friend' className='font-semibold text-lg drop-shadow-lg' style={{color: '#36753B'}}>
+                                Friend who invited you*
                             </Label>
                             <Input
                                 name='friend'
@@ -184,12 +194,13 @@ export default function LightOverDarknessLanding() {
                                 type='text'
                                 placeholder='e.g., John Lee'
                                 required={!attend}
-                                className='bg-white'
+                                className='bg-white border-2 rounded-lg p-3 text-lg placeholder-gray-500'
+                                style={{borderColor: '#36753B', color: '#36753B'}}
                                 disabled={attend}
                             />
                         </div>
                         <div>
-                            <Label htmlFor='school' className='text-white'>
+                            <Label htmlFor='school' className='font-semibold text-lg drop-shadow-lg' style={{color: '#36753B'}}>
                                 School*
                             </Label>
                             <Input
@@ -197,13 +208,14 @@ export default function LightOverDarknessLanding() {
                                 type='text'
                                 placeholder='e.g., Livermore High School'
                                 required={!attend}
-                                className='bg-white'
+                                className='bg-white border-2 rounded-lg p-3 text-lg placeholder-gray-500'
+                                style={{borderColor: '#36753B', color: '#36753B'}}
                                 name='school'
                                 disabled={attend}
                             />
                         </div>
                         <div>
-                            <Label htmlFor='grade' className='text-white'>
+                            <Label htmlFor='grade' className='font-semibold text-lg drop-shadow-lg' style={{color: '#36753B'}}>
                                 Grade
                             </Label>
                             <Input
@@ -212,34 +224,37 @@ export default function LightOverDarknessLanding() {
                                 placeholder='6'
                                 min='6'
                                 max='12'
-                                className='bg-white'
+                                className='bg-white border-2 rounded-lg p-3 text-lg placeholder-gray-500'
+                                style={{borderColor: '#36753B', color: '#36753B'}}
                                 name='grade'
                                 disabled={attend}
                             />
                         </div>
                         <div>
-                            <Label htmlFor='email' className='text-white'>
-                                Parents(Guardian) Email*
+                            <Label htmlFor='email' className='font-semibold text-lg drop-shadow-lg' style={{color: '#36753B'}}>
+                                Parents/Guardian Email*
                             </Label>
                             <Input
                                 id='email'
                                 type='email'
                                 placeholder='your@email.com'
                                 required={!attend}
-                                className='bg-white'
+                                className='bg-white border-2 rounded-lg p-3 text-lg placeholder-gray-500'
+                                style={{borderColor: '#36753B', color: '#36753B'}}
                                 name='email'
                                 disabled={attend}
                             />
                         </div>
                         <div>
-                            <Label htmlFor='dietary' className='text-white'>
-                                Please specify your dietary restrictions
+                            <Label htmlFor='dietary' className='font-semibold text-lg drop-shadow-lg' style={{color: '#36753B'}}>
+                                Dietary restrictions (if any)
                             </Label>
                             <Input
                                 id='dietary'
                                 type='text'
                                 placeholder='e.g., Allergies, Intolerances, etc.'
-                                className='bg-white'
+                                className='bg-white border-2 rounded-lg p-3 text-lg placeholder-gray-500'
+                                style={{borderColor: '#36753B', color: '#36753B'}}
                                 name='dietary'
                                 disabled={attend}
                             />
@@ -247,13 +262,13 @@ export default function LightOverDarknessLanding() {
                         <Button
                             disabled={isLoading}
                             type='submit'
-                            className='w-full bg-violet-200 hover:bg-violet-500 text-violet-700 hover:text-white font-bold py-5 rounded-xl transition duration-300 drop-shadow-2xl
-                            text-lg'
+                            className='w-full font-bold py-4 rounded-lg transition-all duration-300 text-xl shadow-2xl transform hover:scale-105 border-2'
+                            style={{background: 'linear-gradient(45deg, #FBE55C, #B2DA61)', color: '#36753B', borderColor: '#36753B'}}
                         >
                             {isLoading ? (
-                                <div className='flex items-center'>
-                                    <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-                                    Please wait
+                                <div className='flex items-center justify-center'>
+                                    <Loader2 className='mr-3 h-5 w-5 animate-spin' />
+                                    <span>Processing...</span>
                                 </div>
                             ) : (
                                 'Register Now'
@@ -263,32 +278,32 @@ export default function LightOverDarknessLanding() {
                 </div>
                 <Link
                     href='/why-not-halloween'
-                    className='mt-1 block text-xl bg-orange-700 hover:bg-orange-900 text-yellow-200 font-bold py-2 rounded-md transition duration-300 text-center shadow-xl'
-                >{`Why 'NOT' Halloween?`}</Link>
+                    className='mt-6 block text-xl font-bold py-3 rounded-lg transition-all duration-300 text-center shadow-lg border-2'
+                    style={{background: 'linear-gradient(45deg, #5BBFEC, #B2DA61)', color: '#36753B', borderColor: '#36753B'}}
+                >Why &apos;NOT&apos; Halloween?</Link>
             </main>
 
             <footer className='pb-8 relative z-10'>
-                <div>
-                    <Image src='/logo.png' alt='Logo' width={128} height={128} className='mx-auto mb-4' />
+                <div className='backdrop-blur-sm rounded-2xl p-6 mx-4 border-2 shadow-xl' style={{backgroundColor: '#FBF4E1', borderColor: '#FBE55C'}}>
+                    <div>
+                        <Image src='/logo.png' alt='Logo' width={128} height={128} className='mx-auto mb-4 rounded-xl shadow-lg' />
+                    </div>
+                    <ul className='space-y-3 flex flex-col items-center justify-center'>
+                        <li className='flex items-center rounded-lg p-3 w-full justify-center backdrop-blur-sm border' style={{backgroundColor: '#FBE55C', borderColor: '#36753B'}}>
+                            <Phone className='w-5 h-5 mr-3 animate-bounce' style={{color: '#36753B'}} />
+                            <span className='font-semibold text-lg' style={{color: '#36753B'}}>(925) 413-9399</span>
+                        </li>
+                        <li className='flex items-center rounded-lg p-3 w-full justify-center backdrop-blur-sm border' style={{backgroundColor: '#B2DA61', borderColor: '#36753B'}}>
+                            <Mail className='w-5 h-5 mr-3 animate-bounce delay-100' style={{color: '#36753B'}} />
+                            <Link href={'mailto:hello@mvcym.org'} className='font-semibold text-lg transition-colors' style={{color: '#36753B'}}>hello@mvcym.org</Link>
+                        </li>
+                        <li className='flex items-center rounded-lg p-3 w-full justify-center backdrop-blur-sm border' style={{backgroundColor: '#5BBFEC', borderColor: '#36753B'}}>
+                            <InstagramLogoIcon className='w-5 h-5 mr-3 animate-bounce delay-200' style={{color: '#36753B'}} />
+                            <Link href={'https://www.instagram.com/mvcym_/reels'} className='font-semibold text-lg transition-colors' style={{color: '#36753B'}}>mvcym_</Link>
+                        </li>
+
+                    </ul>
                 </div>
-                <ul className='space-y-2 flex flex-col items-center justify-center text-slate-900'>
-                    <li className='flex items-center'>
-                        <Phone className='w-5 h-5 mr-2 text-yellow-400' />
-                        <span>(925) 413-9399</span>
-                    </li>
-                    <li className='flex items-center'>
-                        <Mail className='w-5 h-5 mr-2 text-yellow-400' />
-                        <Link href={'mailto:hello@mvcym.org'}>hello@mvcym.org</Link>
-                    </li>
-                    <li className='flex items-center'>
-                        <InstagramLogoIcon className='w-5 h-5 mr-2 text-yellow-400' />
-                        <Link href={'https://www.instagram.com/mvcym_/reels'}>mvcym_</Link>
-                    </li>
-                    <li className='flex items-center'>
-                        <MapPin className='w-5 h-5 mr-2 text-yellow-400' />
-                        <span>1239 N.Livermore Ave., Livermore, CA 94551</span>
-                    </li>
-                </ul>
             </footer>
         </div>
     );
